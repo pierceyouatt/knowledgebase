@@ -1,6 +1,10 @@
 class Engagement < ApplicationRecord
   # Direct associations
 
+  belongs_to :inst,
+             :class_name => "Institution",
+             :counter_cache => true
+
   belongs_to :empl,
              :required => false,
              :class_name => "Employee",
