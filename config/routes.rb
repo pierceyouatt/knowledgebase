@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "institutions#index"
   # Routes for the Proj phase resource:
 
   # CREATE
