@@ -53,6 +53,14 @@ class ProjPhasesController < ApplicationController
     end
   end
 
+  def destroy_row_from_type
+    @proj_phase = ProjPhase.find(params.fetch("id_to_remove"))
+
+    @proj_phase.destroy
+
+    redirect_to("/project_types/#{@proj_phase.type_id}", notice: "ProjPhase deleted successfully.")
+  end
+
   def destroy_row
     @proj_phase = ProjPhase.find(params.fetch("id_to_remove"))
 

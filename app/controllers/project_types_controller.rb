@@ -53,6 +53,14 @@ class ProjectTypesController < ApplicationController
     end
   end
 
+  def destroy_row_from_sol
+    @project_type = ProjectType.find(params.fetch("id_to_remove"))
+
+    @project_type.destroy
+
+    redirect_to("/solutions/#{@project_type.sol_id}", notice: "ProjectType deleted successfully.")
+  end
+
   def destroy_row
     @project_type = ProjectType.find(params.fetch("id_to_remove"))
 

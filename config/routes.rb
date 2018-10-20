@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_proj_phase/:id_to_remove", { :controller => "proj_phases", :action => "destroy_row" })
+  get("/delete_proj_phase_from_type/:id_to_remove", { :controller => "proj_phases", :action => "destroy_row_from_type" })
 
   #------------------------------
 
@@ -37,6 +38,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_project_type/:id_to_remove", { :controller => "project_types", :action => "destroy_row" })
+  get("/delete_project_type_from_sol/:id_to_remove", { :controller => "project_types", :action => "destroy_row_from_sol" })
 
   #------------------------------
 
@@ -56,6 +58,11 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_engagement/:id_to_remove", { :controller => "engagements", :action => "destroy_row" })
+  get("/delete_engagement_from_phase/:id_to_remove", { :controller => "engagements", :action => "destroy_row_from_phase" })
+  get("/delete_engagement_from_type/:id_to_remove", { :controller => "engagements", :action => "destroy_row_from_type" })
+  get("/delete_engagement_from_sol/:id_to_remove", { :controller => "engagements", :action => "destroy_row_from_sol" })
+  get("/delete_engagement_from_inst/:id_to_remove", { :controller => "engagements", :action => "destroy_row_from_inst" })
+  get("/delete_engagement_from_empl/:id_to_remove", { :controller => "engagements", :action => "destroy_row_from_empl" })
 
   #------------------------------
 
