@@ -1,6 +1,10 @@
 class Engagement < ApplicationRecord
   # Direct associations
 
+  belongs_to :phase,
+             :class_name => "ProjPhase",
+             :counter_cache => true
+
   belongs_to :type,
              :class_name => "ProjectType",
              :counter_cache => true
