@@ -64,7 +64,11 @@
 
         <!-- Display proj_phase.type_id start -->
         <td>
-          <%= proj_phase.type.type_name %>
+          <% if proj_phase.type.present? %>
+            <a href="/project_types/<%= proj_phase.type.id %>">
+              <%= proj_phase.type.type_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display proj_phase.type_id end -->
 

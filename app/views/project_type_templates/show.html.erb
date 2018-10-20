@@ -43,7 +43,11 @@
       </dt>
       <!-- Display sol_id start -->
       <dd>
-        <%= @project_type.sol_id %>
+        <% if @project_type.sol.present? %>
+          <a href="/solutions/<%= @project_type.sol_id %>">
+            <%= @project_type.sol.sol_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display sol_id end -->
 

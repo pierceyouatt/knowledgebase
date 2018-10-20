@@ -64,7 +64,11 @@
 
         <!-- Display project_type.sol_id start -->
         <td>
-          <%= project_type.sol.sol_name %>
+          <% if project_type.sol.present? %>
+            <a href="/solutions/<%= project_type.sol.id %>">
+              <%= project_type.sol.sol_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display project_type.sol_id end -->
 

@@ -86,19 +86,31 @@
 
         <!-- Display engagement.empl_id start -->
         <td>
-          <%= engagement.empl.email %>
+          <% if engagement.empl.present? %>
+            <a href="/employees/<%= engagement.empl.id %>">
+              <%= engagement.empl.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display engagement.empl_id end -->
 
         <!-- Display engagement.inst_id start -->
         <td>
-          <%= engagement.inst.inst_name %>
+          <% if engagement.inst.present? %>
+            <a href="/institutions/<%= engagement.inst.id %>">
+              <%= engagement.inst.inst_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display engagement.inst_id end -->
 
         <!-- Display engagement.sol_id start -->
         <td>
-          <%= engagement.sol.sol_name %>
+          <% if engagement.sol.present? %>
+            <a href="/solutions/<%= engagement.sol.id %>">
+              <%= engagement.sol.sol_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display engagement.sol_id end -->
 
@@ -128,13 +140,21 @@
 
         <!-- Display engagement.type_id start -->
         <td>
-          <%= engagement.type.type_name %>
+          <% if engagement.type.present? %>
+            <a href="/project_types/<%= engagement.type.id %>">
+              <%= engagement.type.type_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display engagement.type_id end -->
 
         <!-- Display engagement.phase_id start -->
         <td>
-          <%= engagement.phase.phase_name %>
+          <% if engagement.phase.present? %>
+            <a href="/proj_phases/<%= engagement.phase.id %>">
+              <%= engagement.phase.phase_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display engagement.phase_id end -->
 

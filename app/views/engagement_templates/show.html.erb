@@ -34,7 +34,11 @@
       </dt>
       <!-- Display empl_id start -->
       <dd>
-        <%= @engagement.empl_id %>
+        <% if @engagement.empl.present? %>
+          <a href="/employees/<%= @engagement.empl_id %>">
+            <%= @engagement.empl.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display empl_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display inst_id start -->
       <dd>
-        <%= @engagement.inst_id %>
+        <% if @engagement.inst.present? %>
+          <a href="/institutions/<%= @engagement.inst_id %>">
+            <%= @engagement.inst.inst_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display inst_id end -->
 
@@ -52,7 +60,11 @@
       </dt>
       <!-- Display sol_id start -->
       <dd>
-        <%= @engagement.sol_id %>
+        <% if @engagement.sol.present? %>
+          <a href="/solutions/<%= @engagement.sol_id %>">
+            <%= @engagement.sol.sol_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display sol_id end -->
 
@@ -97,7 +109,11 @@
       </dt>
       <!-- Display type_id start -->
       <dd>
-        <%= @engagement.type_id %>
+        <% if @engagement.type.present? %>
+          <a href="/project_types/<%= @engagement.type_id %>">
+            <%= @engagement.type.type_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display type_id end -->
 
@@ -106,7 +122,11 @@
       </dt>
       <!-- Display phase_id start -->
       <dd>
-        <%= @engagement.phase_id %>
+        <% if @engagement.phase.present? %>
+          <a href="/proj_phases/<%= @engagement.phase_id %>">
+            <%= @engagement.phase.phase_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display phase_id end -->
 

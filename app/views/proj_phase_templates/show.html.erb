@@ -43,7 +43,11 @@
       </dt>
       <!-- Display type_id start -->
       <dd>
-        <%= @proj_phase.type_id %>
+        <% if @proj_phase.type.present? %>
+          <a href="/project_types/<%= @proj_phase.type_id %>">
+            <%= @proj_phase.type.type_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display type_id end -->
 
