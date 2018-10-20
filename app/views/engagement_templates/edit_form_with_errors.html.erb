@@ -48,7 +48,7 @@
     </label>
 
     <!-- Input for sol_id start -->
-    <input type="text" id="sol_id" name="sol_id" class="form-control" value="<%= @engagement.sol_id %>">
+    <%= select_tag(:sol_id, options_from_collection_for_select(Solution.all, :id, :sol_name, @engagement.sol_id), :class => "form-control") %>
     <!-- Input for sol_id end -->
   </div>
   <!-- Label and input for sol_id end -->
