@@ -6,6 +6,7 @@ class InstitutionsController < ApplicationController
   end
 
   def show
+    @engagement = Engagement.new
     @institution = Institution.find(params.fetch("id_to_display"))
 
     render("institution_templates/show.html.erb")

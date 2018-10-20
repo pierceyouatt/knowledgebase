@@ -6,6 +6,8 @@ class SolutionsController < ApplicationController
   end
 
   def show
+    @project_type = ProjectType.new
+    @engagement = Engagement.new
     @solution = Solution.find(params.fetch("id_to_display"))
 
     render("solution_templates/show.html.erb")

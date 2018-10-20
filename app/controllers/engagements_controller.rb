@@ -39,6 +39,94 @@ class EngagementsController < ApplicationController
     end
   end
 
+  def create_row_from_institution
+    @engagement = Engagement.new
+
+    @engagement.empl_id = params.fetch("empl_id")
+    @engagement.inst_id = params.fetch("inst_id")
+    @engagement.sol_id = params.fetch("sol_id")
+    @engagement.eng_name = params.fetch("eng_name")
+    @engagement.eng_number = params.fetch("eng_number")
+    @engagement.sp_link = params.fetch("sp_link")
+    @engagement.eng_summary = params.fetch("eng_summary")
+    @engagement.type_id = params.fetch("type_id")
+    @engagement.phase_id = params.fetch("phase_id")
+
+    if @engagement.valid?
+      @engagement.save
+
+      redirect_to("/institutions/#{@engagement.inst_id}", notice: "Engagement created successfully.")
+    else
+      render("engagement_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_solution
+    @engagement = Engagement.new
+
+    @engagement.empl_id = params.fetch("empl_id")
+    @engagement.inst_id = params.fetch("inst_id")
+    @engagement.sol_id = params.fetch("sol_id")
+    @engagement.eng_name = params.fetch("eng_name")
+    @engagement.eng_number = params.fetch("eng_number")
+    @engagement.sp_link = params.fetch("sp_link")
+    @engagement.eng_summary = params.fetch("eng_summary")
+    @engagement.type_id = params.fetch("type_id")
+    @engagement.phase_id = params.fetch("phase_id")
+
+    if @engagement.valid?
+      @engagement.save
+
+      redirect_to("/solutions/#{@engagement.sol_id}", notice: "Engagement created successfully.")
+    else
+      render("engagement_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_project_type
+    @engagement = Engagement.new
+
+    @engagement.empl_id = params.fetch("empl_id")
+    @engagement.inst_id = params.fetch("inst_id")
+    @engagement.sol_id = params.fetch("sol_id")
+    @engagement.eng_name = params.fetch("eng_name")
+    @engagement.eng_number = params.fetch("eng_number")
+    @engagement.sp_link = params.fetch("sp_link")
+    @engagement.eng_summary = params.fetch("eng_summary")
+    @engagement.type_id = params.fetch("type_id")
+    @engagement.phase_id = params.fetch("phase_id")
+
+    if @engagement.valid?
+      @engagement.save
+
+      redirect_to("/project_types/#{@engagement.type_id}", notice: "Engagement created successfully.")
+    else
+      render("engagement_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_proj_phase
+    @engagement = Engagement.new
+
+    @engagement.empl_id = params.fetch("empl_id")
+    @engagement.inst_id = params.fetch("inst_id")
+    @engagement.sol_id = params.fetch("sol_id")
+    @engagement.eng_name = params.fetch("eng_name")
+    @engagement.eng_number = params.fetch("eng_number")
+    @engagement.sp_link = params.fetch("sp_link")
+    @engagement.eng_summary = params.fetch("eng_summary")
+    @engagement.type_id = params.fetch("type_id")
+    @engagement.phase_id = params.fetch("phase_id")
+
+    if @engagement.valid?
+      @engagement.save
+
+      redirect_to("/proj_phases/#{@engagement.phase_id}", notice: "Engagement created successfully.")
+    else
+      render("engagement_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @engagement = Engagement.find(params.fetch("prefill_with_id"))
 

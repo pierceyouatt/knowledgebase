@@ -6,6 +6,7 @@ class ProjPhasesController < ApplicationController
   end
 
   def show
+    @engagement = Engagement.new
     @proj_phase = ProjPhase.find(params.fetch("id_to_display"))
 
     render("proj_phase_templates/show.html.erb")
@@ -27,6 +28,21 @@ class ProjPhasesController < ApplicationController
       @proj_phase.save
 
       redirect_back(:fallback_location => "/proj_phases", :notice => "Proj phase created successfully.")
+    else
+      render("proj_phase_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_project_type
+    @proj_phase = ProjPhase.new
+
+    @proj_phase.phase_name = params.fetch("phase_name")
+    @proj_phase.type_id = params.fetch("type_id")
+
+    if @proj_phase.valid?
+      @proj_phase.save
+
+      redirect_to("/project_types/#{@proj_phase.type_id}", notice: "ProjPhase created successfully.")
     else
       render("proj_phase_templates/new_form_with_errors.html.erb")
     end

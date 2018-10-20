@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/proj_phases/new", { :controller => "proj_phases", :action => "new_form" })
   post("/create_proj_phase", { :controller => "proj_phases", :action => "create_row" })
+  post("/create_proj_phase_from_project_type", { :controller => "proj_phases", :action => "create_row_from_project_type" })
 
   # READ
   get("/proj_phases", { :controller => "proj_phases", :action => "index" })
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/project_types/new", { :controller => "project_types", :action => "new_form" })
   post("/create_project_type", { :controller => "project_types", :action => "create_row" })
+  post("/create_project_type_from_solution", { :controller => "project_types", :action => "create_row_from_solution" })
 
   # READ
   get("/project_types", { :controller => "project_types", :action => "index" })
@@ -47,6 +49,10 @@ Rails.application.routes.draw do
   # CREATE
   get("/engagements/new", { :controller => "engagements", :action => "new_form" })
   post("/create_engagement", { :controller => "engagements", :action => "create_row" })
+  post("/create_engagement_from_proj_phase", { :controller => "engagements", :action => "create_row_from_proj_phase" })
+  post("/create_engagement_from_project_type", { :controller => "engagements", :action => "create_row_from_project_type" })
+  post("/create_engagement_from_solution", { :controller => "engagements", :action => "create_row_from_solution" })
+  post("/create_engagement_from_institution", { :controller => "engagements", :action => "create_row_from_institution" })
 
   # READ
   get("/engagements", { :controller => "engagements", :action => "index" })

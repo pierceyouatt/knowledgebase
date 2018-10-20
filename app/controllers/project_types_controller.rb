@@ -6,6 +6,8 @@ class ProjectTypesController < ApplicationController
   end
 
   def show
+    @engagement = Engagement.new
+    @proj_phase = ProjPhase.new
     @project_type = ProjectType.find(params.fetch("id_to_display"))
 
     render("project_type_templates/show.html.erb")
@@ -27,6 +29,21 @@ class ProjectTypesController < ApplicationController
       @project_type.save
 
       redirect_back(:fallback_location => "/project_types", :notice => "Project type created successfully.")
+    else
+      render("project_type_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_solution
+    @project_type = ProjectType.new
+
+    @project_type.type_name = params.fetch("type_name")
+    @project_type.sol_id = params.fetch("sol_id")
+
+    if @project_type.valid?
+      @project_type.save
+
+      redirect_to("/solutions/#{@project_type.sol_id}", notice: "ProjectType created successfully.")
     else
       render("project_type_templates/new_form_with_errors.html.erb")
     end
