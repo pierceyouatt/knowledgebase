@@ -1,6 +1,7 @@
 class InstitutionsController < ApplicationController
   def index
-    @institutions = Institution.page(params[:page]).per(10)
+    @q = Institution.ransack(params[:q])
+    @institutions = @q.result(:distinct => true).includes(:engagements).page(params[:page]).per(10)
 
     render("institution_templates/index.html.erb")
   end

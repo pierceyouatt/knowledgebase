@@ -1,6 +1,7 @@
 class ProjectTypesController < ApplicationController
   def index
-    @project_types = ProjectType.page(params[:page]).per(10)
+    @q = ProjectType.ransack(params[:q])
+    @project_types = @q.result(:distinct => true).includes(:sol, :proj_phases, :engagements).page(params[:page]).per(10)
 
     render("project_type_templates/index.html.erb")
   end
