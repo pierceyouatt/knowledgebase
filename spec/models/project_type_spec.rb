@@ -4,6 +4,8 @@ RSpec.describe ProjectType, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:engagements) }
+
     it { should have_many(:proj_phases) }
 
     it { should belong_to(:sol) }

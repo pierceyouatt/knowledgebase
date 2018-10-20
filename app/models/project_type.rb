@@ -1,6 +1,9 @@
 class ProjectType < ApplicationRecord
   # Direct associations
 
+  has_many   :engagements,
+             :foreign_key => "type_id"
+
   has_many   :proj_phases,
              :foreign_key => "type_id"
 

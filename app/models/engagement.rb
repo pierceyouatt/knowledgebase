@@ -1,6 +1,10 @@
 class Engagement < ApplicationRecord
   # Direct associations
 
+  belongs_to :type,
+             :class_name => "ProjectType",
+             :counter_cache => true
+
   belongs_to :sol,
              :class_name => "Solution",
              :counter_cache => true
