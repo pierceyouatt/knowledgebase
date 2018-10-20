@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Proj phase resource:
+
+  # CREATE
+  get("/proj_phases/new", { :controller => "proj_phases", :action => "new_form" })
+  post("/create_proj_phase", { :controller => "proj_phases", :action => "create_row" })
+
+  # READ
+  get("/proj_phases", { :controller => "proj_phases", :action => "index" })
+  get("/proj_phases/:id_to_display", { :controller => "proj_phases", :action => "show" })
+
+  # UPDATE
+  get("/proj_phases/:prefill_with_id/edit", { :controller => "proj_phases", :action => "edit_form" })
+  post("/update_proj_phase/:id_to_modify", { :controller => "proj_phases", :action => "update_row" })
+
+  # DELETE
+  get("/delete_proj_phase/:id_to_remove", { :controller => "proj_phases", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Project type resource:
 
   # CREATE

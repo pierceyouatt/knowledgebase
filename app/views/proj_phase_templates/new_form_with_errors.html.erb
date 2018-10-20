@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @proj_phase.present? %>
+  <% if @proj_phase.errors.any? %>
+    <% @proj_phase.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new proj phase
+</h1>
+
+
+<hr>
+
+<!-- Form proj_phase start -->
+<form action="/create_proj_phase" method="post">
+<!-- Form proj_phase end -->
+
+  <!-- Label and input for phase_name start -->
+  <div class="form-group">
+    <label for="phase_name">
+      Phase name
+    </label>
+
+    <!-- Input for phase_name start -->
+    <input type="text" id="phase_name" name="phase_name" class="form-control" value="<%= @proj_phase.phase_name %>">
+    <!-- Input for phase_name end -->
+  </div>
+  <!-- Label and input for phase_name end -->
+
+  <!-- Label and input for type_id start -->
+  <div class="form-group">
+    <label for="type_id">
+      Type
+    </label>
+
+    <!-- Input for type_id start -->
+    <input type="text" id="type_id" name="type_id" class="form-control" value="<%= @proj_phase.type_id %>">
+    <!-- Input for type_id end -->
+  </div>
+  <!-- Label and input for type_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create proj phase
+  </button>
+</form>
+
+<hr>
+
+<a href="/proj_phases">
+  Go back
+</a>
