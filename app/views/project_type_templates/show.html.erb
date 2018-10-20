@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Project type #<%= @project_type.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/project_types" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link project_type start -->
+      <div class="col">
+        <a href="/project_types/<%= @project_type.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit project type
+        </a>
+      </div>
+      <!-- Edit link project_type end -->
+
+      <!-- Delete link project_type start -->
+      <div class="col">
+        <a href="/delete_project_type/<%= @project_type.id %>" class="btn btn-block btn-outline-secondary">
+          Delete project type
+        </a>
+      </div>
+      <!-- Delete link project_type end -->
+    </div>
+
+    <dl>
+      <dt>
+        Type name
+      </dt>
+      <!-- Display type_name start -->
+      <dd>
+        <%= @project_type.type_name %>
+      </dd>
+      <!-- Display type_name end -->
+
+      <dt>
+        Sol
+      </dt>
+      <!-- Display sol_id start -->
+      <dd>
+        <%= @project_type.sol_id %>
+      </dd>
+      <!-- Display sol_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@project_type.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@project_type.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

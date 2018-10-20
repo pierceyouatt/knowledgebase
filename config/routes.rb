@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Project type resource:
+
+  # CREATE
+  get("/project_types/new", { :controller => "project_types", :action => "new_form" })
+  post("/create_project_type", { :controller => "project_types", :action => "create_row" })
+
+  # READ
+  get("/project_types", { :controller => "project_types", :action => "index" })
+  get("/project_types/:id_to_display", { :controller => "project_types", :action => "show" })
+
+  # UPDATE
+  get("/project_types/:prefill_with_id/edit", { :controller => "project_types", :action => "edit_form" })
+  post("/update_project_type/:id_to_modify", { :controller => "project_types", :action => "update_row" })
+
+  # DELETE
+  get("/delete_project_type/:id_to_remove", { :controller => "project_types", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Engagement resource:
 
   # CREATE
