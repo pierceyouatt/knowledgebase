@@ -21,7 +21,7 @@
     </label>
 
     <!-- Input for inst_id start -->
-    <input type="text" id="inst_id" name="inst_id" class="form-control" value="<%= @engagement.inst_id %>">
+    <%= select_tag(:inst_id, options_from_collection_for_select(Institution.all, :id, :inst_name, @engagement.inst_id), :class => "form-control") %>
     <!-- Input for inst_id end -->
   </div>
   <!-- Label and input for inst_id end -->
