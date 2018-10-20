@@ -1,0 +1,84 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Employee #<%= @employee.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/employees" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link employee start -->
+      <div class="col">
+        <a href="/employees/<%= @employee.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit employee
+        </a>
+      </div>
+      <!-- Edit link employee end -->
+
+    </div>
+
+    <dl>
+      <dt>
+        Email
+      </dt>
+      <!-- Display email start -->
+      <dd>
+        <%= @employee.email %>
+      </dd>
+      <!-- Display email end -->
+
+      <dt>
+        Password
+      </dt>
+      <!-- Display password start -->
+      <dd>
+        <%= @employee.password %>
+      </dd>
+      <!-- Display password end -->
+
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @employee.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Position
+      </dt>
+      <!-- Display position start -->
+      <dd>
+        <%= @employee.position %>
+      </dd>
+      <!-- Display position end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@employee.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@employee.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
