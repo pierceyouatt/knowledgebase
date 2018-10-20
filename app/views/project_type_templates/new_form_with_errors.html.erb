@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @project_type.present? %>
   <% if @project_type.errors.any? %>
     <% @project_type.errors.full_messages.each do |message| %>
@@ -16,33 +15,23 @@
 
 <hr>
 
-<!-- Form project_type start -->
 <form action="/create_project_type" method="post">
-<!-- Form project_type end -->
 
-  <!-- Label and input for type_name start -->
   <div class="form-group">
     <label for="type_name">
       Type name
     </label>
 
-    <!-- Input for type_name start -->
     <input type="text" id="type_name" name="type_name" class="form-control" value="<%= @project_type.type_name %>">
-    <!-- Input for type_name end -->
   </div>
-  <!-- Label and input for type_name end -->
 
-  <!-- Label and input for sol_id start -->
   <div class="form-group">
     <label for="sol_id">
       Sol
     </label>
 
-    <!-- Input for sol_id start -->
     <%= select_tag(:sol_id, options_from_collection_for_select(Solution.all, :id, :sol_name, @project_type.sol_id), :class => "form-control") %>
-    <!-- Input for sol_id end -->
   </div>
-  <!-- Label and input for sol_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create project type

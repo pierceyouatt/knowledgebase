@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "engagement_templates/engagements_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -82,13 +78,10 @@
 
       <% @engagements.each do |engagement| %>
       <tr>
-        <!-- Display engagement.id start -->
         <td>
           <%= engagement.id %>
         </td>
-        <!-- Display engagement.id end -->
 
-        <!-- Display engagement.empl_id start -->
         <td>
           <% if engagement.empl.present? %>
             <a href="/employees/<%= engagement.empl.id %>">
@@ -96,9 +89,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display engagement.empl_id end -->
 
-        <!-- Display engagement.inst_id start -->
         <td>
           <% if engagement.inst.present? %>
             <a href="/institutions/<%= engagement.inst.id %>">
@@ -106,9 +97,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display engagement.inst_id end -->
 
-        <!-- Display engagement.sol_id start -->
         <td>
           <% if engagement.sol.present? %>
             <a href="/solutions/<%= engagement.sol.id %>">
@@ -116,33 +105,23 @@
             </a>
           <% end %>
         </td>
-        <!-- Display engagement.sol_id end -->
 
-        <!-- Display engagement.eng_name start -->
         <td>
           <%= engagement.eng_name %>
         </td>
-        <!-- Display engagement.eng_name end -->
 
-        <!-- Display engagement.eng_number start -->
         <td>
           <%= engagement.eng_number %>
         </td>
-        <!-- Display engagement.eng_number end -->
 
-        <!-- Display engagement.sp_link start -->
         <td>
           <%= engagement.sp_link %>
         </td>
-        <!-- Display engagement.sp_link end -->
 
-        <!-- Display engagement.eng_summary start -->
         <td>
           <%= engagement.eng_summary %>
         </td>
-        <!-- Display engagement.eng_summary end -->
 
-        <!-- Display engagement.type_id start -->
         <td>
           <% if engagement.type.present? %>
             <a href="/project_types/<%= engagement.type.id %>">
@@ -150,9 +129,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display engagement.type_id end -->
 
-        <!-- Display engagement.phase_id start -->
         <td>
           <% if engagement.phase.present? %>
             <a href="/proj_phases/<%= engagement.phase.id %>">
@@ -160,19 +137,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display engagement.phase_id end -->
 
-        <!-- Display engagement.created_at start -->
         <td>
           <%= time_ago_in_words(engagement.created_at) %> ago
         </td>
-        <!-- Display engagement.created_at end -->
 
-        <!-- Display engagement.updated_at start -->
         <td>
           <%= time_ago_in_words(engagement.updated_at) %> ago
         </td>
-        <!-- Display engagement.updated_at end -->
 
         <td>
           <a href="/engagements/<%= engagement.id %>">

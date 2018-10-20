@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @institution.present? %>
   <% if @institution.errors.any? %>
     <% @institution.errors.full_messages.each do |message| %>
@@ -16,21 +15,15 @@
 
 <hr>
 
-<!-- Form institution start -->
 <form action="/create_institution" method="post">
-<!-- Form institution end -->
 
-  <!-- Label and input for inst_name start -->
   <div class="form-group">
     <label for="inst_name">
       Inst name
     </label>
 
-    <!-- Input for inst_name start -->
     <input type="text" id="inst_name" name="inst_name" class="form-control" value="<%= @institution.inst_name %>">
-    <!-- Input for inst_name end -->
   </div>
-  <!-- Label and input for inst_name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create institution

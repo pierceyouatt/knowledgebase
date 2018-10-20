@@ -1,107 +1,70 @@
-<!-- Form engagement start -->
 <form action="/create_engagement_from_proj_phase" method="post">
-<!-- Form engagement end -->
 
-  <!-- Label and input for empl_id start -->
   <div class="form-group">
     <label for="empl_id">
       Empl
     </label>
 
-    <!-- Input for empl_id start -->
     <%= select_tag(:empl_id, options_from_collection_for_select(Employee.all, :id, :email, @engagement.empl_id), :class => "form-control") %>
-    <!-- Input for empl_id end -->
   </div>
-  <!-- Label and input for empl_id end -->
 
-  <!-- Label and input for inst_id start -->
   <div class="form-group">
     <label for="inst_id">
       Inst
     </label>
 
-    <!-- Input for inst_id start -->
     <%= select_tag(:inst_id, options_from_collection_for_select(Institution.all, :id, :inst_name, @engagement.inst_id), :class => "form-control") %>
-    <!-- Input for inst_id end -->
   </div>
-  <!-- Label and input for inst_id end -->
 
-  <!-- Label and input for sol_id start -->
   <div class="form-group">
     <label for="sol_id">
       Sol
     </label>
 
-    <!-- Input for sol_id start -->
     <%= select_tag(:sol_id, options_from_collection_for_select(Solution.all, :id, :sol_name, @engagement.sol_id), :class => "form-control") %>
-    <!-- Input for sol_id end -->
   </div>
-  <!-- Label and input for sol_id end -->
 
-  <!-- Label and input for eng_name start -->
   <div class="form-group">
     <label for="eng_name">
       Eng name
     </label>
 
-    <!-- Input for eng_name start -->
     <input type="text" id="eng_name" name="eng_name" class="form-control" value="<%= @engagement.eng_name %>">
-    <!-- Input for eng_name end -->
   </div>
-  <!-- Label and input for eng_name end -->
 
-  <!-- Label and input for eng_number start -->
   <div class="form-group">
     <label for="eng_number">
       Eng number
     </label>
 
-    <!-- Input for eng_number start -->
     <input type="text" id="eng_number" name="eng_number" class="form-control" value="<%= @engagement.eng_number %>">
-    <!-- Input for eng_number end -->
   </div>
-  <!-- Label and input for eng_number end -->
 
-  <!-- Label and input for sp_link start -->
   <div class="form-group">
     <label for="sp_link">
       Sp link
     </label>
 
-    <!-- Input for sp_link start -->
     <input type="text" id="sp_link" name="sp_link" class="form-control" value="<%= @engagement.sp_link %>">
-    <!-- Input for sp_link end -->
   </div>
-  <!-- Label and input for sp_link end -->
 
-  <!-- Label and input for eng_summary start -->
   <div class="form-group">
     <label for="eng_summary">
       Eng summary
     </label>
 
-    <!-- Input for eng_summary start -->
     <input type="text" id="eng_summary" name="eng_summary" class="form-control" value="<%= @engagement.eng_summary %>">
-    <!-- Input for eng_summary end -->
   </div>
-  <!-- Label and input for eng_summary end -->
 
-  <!-- Label and input for type_id start -->
   <div class="form-group">
     <label for="type_id">
       Type
     </label>
 
-    <!-- Input for type_id start -->
     <%= select_tag(:type_id, options_from_collection_for_select(ProjectType.all, :id, :type_name, @engagement.type_id), :class => "form-control") %>
-    <!-- Input for type_id end -->
   </div>
-  <!-- Label and input for type_id end -->
 
-  <!-- Label and input for phase_id start -->
-  <!-- Input for phase_id start -->
   <input type="hidden" name="phase_id" value="<%= @proj_phase.id %>">
-  <!-- Input for phase_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create engagement

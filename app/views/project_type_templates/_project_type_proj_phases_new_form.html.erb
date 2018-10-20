@@ -1,23 +1,14 @@
-<!-- Form proj_phase start -->
 <form action="/create_proj_phase_from_project_type" method="post">
-<!-- Form proj_phase end -->
 
-  <!-- Label and input for phase_name start -->
   <div class="form-group">
     <label for="phase_name">
       Phase name
     </label>
 
-    <!-- Input for phase_name start -->
     <input type="text" id="phase_name" name="phase_name" class="form-control" value="<%= @proj_phase.phase_name %>">
-    <!-- Input for phase_name end -->
   </div>
-  <!-- Label and input for phase_name end -->
 
-  <!-- Label and input for type_id start -->
-  <!-- Input for type_id start -->
   <input type="hidden" name="type_id" value="<%= @project_type.id %>">
-  <!-- Input for type_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create proj phase

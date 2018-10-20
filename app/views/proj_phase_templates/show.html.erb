@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link proj_phase start -->
       <div class="col">
         <a href="/proj_phases/<%= @proj_phase.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit proj phase
         </a>
       </div>
-      <!-- Edit link proj_phase end -->
 
-      <!-- Delete link proj_phase start -->
       <div class="col">
         <a href="/delete_proj_phase/<%= @proj_phase.id %>" class="btn btn-block btn-outline-secondary">
           Delete proj phase
         </a>
       </div>
-      <!-- Delete link proj_phase end -->
     </div>
 
     <dl>
       <dt>
         Phase name
       </dt>
-      <!-- Display phase_name start -->
       <dd>
         <%= @proj_phase.phase_name %>
       </dd>
-      <!-- Display phase_name end -->
 
       <dt>
         Type
       </dt>
-      <!-- Display type_id start -->
       <dd>
         <% if @proj_phase.type.present? %>
           <a href="/project_types/<%= @proj_phase.type_id %>">
@@ -49,33 +42,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display type_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@proj_phase.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@proj_phase.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "proj_phase_templates/proj_phase_engagements" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

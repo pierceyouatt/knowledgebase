@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "proj_phase_templates/proj_phases_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -54,19 +50,14 @@
 
       <% @proj_phases.each do |proj_phase| %>
       <tr>
-        <!-- Display proj_phase.id start -->
         <td>
           <%= proj_phase.id %>
         </td>
-        <!-- Display proj_phase.id end -->
 
-        <!-- Display proj_phase.phase_name start -->
         <td>
           <%= proj_phase.phase_name %>
         </td>
-        <!-- Display proj_phase.phase_name end -->
 
-        <!-- Display proj_phase.type_id start -->
         <td>
           <% if proj_phase.type.present? %>
             <a href="/project_types/<%= proj_phase.type.id %>">
@@ -74,19 +65,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display proj_phase.type_id end -->
 
-        <!-- Display proj_phase.created_at start -->
         <td>
           <%= time_ago_in_words(proj_phase.created_at) %> ago
         </td>
-        <!-- Display proj_phase.created_at end -->
 
-        <!-- Display proj_phase.updated_at start -->
         <td>
           <%= time_ago_in_words(proj_phase.updated_at) %> ago
         </td>
-        <!-- Display proj_phase.updated_at end -->
 
         <td>
           <a href="/proj_phases/<%= proj_phase.id %>">

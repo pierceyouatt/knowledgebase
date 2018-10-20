@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link engagement start -->
       <div class="col">
         <a href="/engagements/<%= @engagement.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit engagement
         </a>
       </div>
-      <!-- Edit link engagement end -->
 
-      <!-- Delete link engagement start -->
       <div class="col">
         <a href="/delete_engagement/<%= @engagement.id %>" class="btn btn-block btn-outline-secondary">
           Delete engagement
         </a>
       </div>
-      <!-- Delete link engagement end -->
     </div>
 
     <dl>
       <dt>
         Empl
       </dt>
-      <!-- Display empl_id start -->
       <dd>
         <% if @engagement.empl.present? %>
           <a href="/employees/<%= @engagement.empl_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display empl_id end -->
 
       <dt>
         Inst
       </dt>
-      <!-- Display inst_id start -->
       <dd>
         <% if @engagement.inst.present? %>
           <a href="/institutions/<%= @engagement.inst_id %>">
@@ -53,12 +46,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display inst_id end -->
 
       <dt>
         Sol
       </dt>
-      <!-- Display sol_id start -->
       <dd>
         <% if @engagement.sol.present? %>
           <a href="/solutions/<%= @engagement.sol_id %>">
@@ -66,48 +57,38 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display sol_id end -->
 
       <dt>
         Eng name
       </dt>
-      <!-- Display eng_name start -->
       <dd>
         <%= @engagement.eng_name %>
       </dd>
-      <!-- Display eng_name end -->
 
       <dt>
         Eng number
       </dt>
-      <!-- Display eng_number start -->
       <dd>
         <%= @engagement.eng_number %>
       </dd>
-      <!-- Display eng_number end -->
 
       <dt>
         Sp link
       </dt>
-      <!-- Display sp_link start -->
       <dd>
         <%= @engagement.sp_link %>
       </dd>
-      <!-- Display sp_link end -->
 
       <dt>
         Eng summary
       </dt>
-      <!-- Display eng_summary start -->
       <dd>
         <%= @engagement.eng_summary %>
       </dd>
-      <!-- Display eng_summary end -->
 
       <dt>
         Type
       </dt>
-      <!-- Display type_id start -->
       <dd>
         <% if @engagement.type.present? %>
           <a href="/project_types/<%= @engagement.type_id %>">
@@ -115,12 +96,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display type_id end -->
 
       <dt>
         Phase
       </dt>
-      <!-- Display phase_id start -->
       <dd>
         <% if @engagement.phase.present? %>
           <a href="/proj_phases/<%= @engagement.phase_id %>">
@@ -128,28 +107,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display phase_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@engagement.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@engagement.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

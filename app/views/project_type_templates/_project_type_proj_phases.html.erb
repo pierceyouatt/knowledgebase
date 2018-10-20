@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @project_type.proj_phases.each do |proj_phase| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/proj_phases/<%= proj_phase.id %>">
           <%= proj_phase.phase_name %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_proj_phase_from_type/<%= proj_phase.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="project_type_proj_phases_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "project_type_templates/project_type_proj_phases_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

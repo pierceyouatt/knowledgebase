@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @solution.errors.any? %>
   <% @solution.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,21 +12,15 @@
 
 <hr>
 
-<!-- Form solution start -->
 <form action="/update_solution/<%= @solution.id %>" method="post">
-<!-- Form solution end -->
 
-  <!-- Label and input for sol_name start -->
   <div class="form-group">
     <label for="sol_name">
       Sol name
     </label>
 
-    <!-- Input for sol_name start -->
     <input type="text" id="sol_name" name="sol_name" class="form-control" value="<%= @solution.sol_name %>">
-    <!-- Input for sol_name end -->
   </div>
-  <!-- Label and input for sol_name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update solution
