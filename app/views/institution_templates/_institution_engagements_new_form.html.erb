@@ -9,7 +9,7 @@
     </label>
 
     <!-- Input for empl_id start -->
-    <input type="text" id="empl_id" name="empl_id" class="form-control" value="<%= @engagement.empl_id %>">
+    <%= select_tag(:empl_id, options_from_collection_for_select(Employee.all, :id, :email, @engagement.empl_id), :class => "form-control") %>
     <!-- Input for empl_id end -->
   </div>
   <!-- Label and input for empl_id end -->
