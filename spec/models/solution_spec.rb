@@ -4,6 +4,8 @@ RSpec.describe Solution, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:project_types) }
+
     it { should have_many(:engagements) }
 
     end
