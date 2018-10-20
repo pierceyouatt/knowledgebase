@@ -1,0 +1,64 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Institution #<%= @institution.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/institutions" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link institution start -->
+      <div class="col">
+        <a href="/institutions/<%= @institution.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit institution
+        </a>
+      </div>
+      <!-- Edit link institution end -->
+
+      <!-- Delete link institution start -->
+      <div class="col">
+        <a href="/delete_institution/<%= @institution.id %>" class="btn btn-block btn-outline-secondary">
+          Delete institution
+        </a>
+      </div>
+      <!-- Delete link institution end -->
+    </div>
+
+    <dl>
+      <dt>
+        Inst name
+      </dt>
+      <!-- Display inst_name start -->
+      <dd>
+        <%= @institution.inst_name %>
+      </dd>
+      <!-- Display inst_name end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@institution.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@institution.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
