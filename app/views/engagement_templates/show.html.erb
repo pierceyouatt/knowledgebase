@@ -1,0 +1,136 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Engagement #<%= @engagement.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/engagements" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link engagement start -->
+      <div class="col">
+        <a href="/engagements/<%= @engagement.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit engagement
+        </a>
+      </div>
+      <!-- Edit link engagement end -->
+
+      <!-- Delete link engagement start -->
+      <div class="col">
+        <a href="/delete_engagement/<%= @engagement.id %>" class="btn btn-block btn-outline-secondary">
+          Delete engagement
+        </a>
+      </div>
+      <!-- Delete link engagement end -->
+    </div>
+
+    <dl>
+      <dt>
+        Empl
+      </dt>
+      <!-- Display empl_id start -->
+      <dd>
+        <%= @engagement.empl_id %>
+      </dd>
+      <!-- Display empl_id end -->
+
+      <dt>
+        Inst
+      </dt>
+      <!-- Display inst_id start -->
+      <dd>
+        <%= @engagement.inst_id %>
+      </dd>
+      <!-- Display inst_id end -->
+
+      <dt>
+        Sol
+      </dt>
+      <!-- Display sol_id start -->
+      <dd>
+        <%= @engagement.sol_id %>
+      </dd>
+      <!-- Display sol_id end -->
+
+      <dt>
+        Eng name
+      </dt>
+      <!-- Display eng_name start -->
+      <dd>
+        <%= @engagement.eng_name %>
+      </dd>
+      <!-- Display eng_name end -->
+
+      <dt>
+        Eng number
+      </dt>
+      <!-- Display eng_number start -->
+      <dd>
+        <%= @engagement.eng_number %>
+      </dd>
+      <!-- Display eng_number end -->
+
+      <dt>
+        Sp link
+      </dt>
+      <!-- Display sp_link start -->
+      <dd>
+        <%= @engagement.sp_link %>
+      </dd>
+      <!-- Display sp_link end -->
+
+      <dt>
+        Eng summary
+      </dt>
+      <!-- Display eng_summary start -->
+      <dd>
+        <%= @engagement.eng_summary %>
+      </dd>
+      <!-- Display eng_summary end -->
+
+      <dt>
+        Type
+      </dt>
+      <!-- Display type_id start -->
+      <dd>
+        <%= @engagement.type_id %>
+      </dd>
+      <!-- Display type_id end -->
+
+      <dt>
+        Phase
+      </dt>
+      <!-- Display phase_id start -->
+      <dd>
+        <%= @engagement.phase_id %>
+      </dd>
+      <!-- Display phase_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@engagement.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@engagement.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

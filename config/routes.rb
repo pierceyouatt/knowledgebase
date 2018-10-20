@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Engagement resource:
+
+  # CREATE
+  get("/engagements/new", { :controller => "engagements", :action => "new_form" })
+  post("/create_engagement", { :controller => "engagements", :action => "create_row" })
+
+  # READ
+  get("/engagements", { :controller => "engagements", :action => "index" })
+  get("/engagements/:id_to_display", { :controller => "engagements", :action => "show" })
+
+  # UPDATE
+  get("/engagements/:prefill_with_id/edit", { :controller => "engagements", :action => "edit_form" })
+  post("/update_engagement/:id_to_modify", { :controller => "engagements", :action => "update_row" })
+
+  # DELETE
+  get("/delete_engagement/:id_to_remove", { :controller => "engagements", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Solution resource:
 
   # CREATE
