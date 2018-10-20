@@ -112,7 +112,7 @@
     </label>
 
     <!-- Input for phase_id start -->
-    <input type="text" id="phase_id" name="phase_id" class="form-control">
+    <%= select_tag(:phase_id, options_from_collection_for_select(ProjPhase.all, :id, :phase_name, @engagement.phase_id), :class => "form-control") %>
     <!-- Input for phase_id end -->
   </div>
   <!-- Label and input for phase_id end -->
