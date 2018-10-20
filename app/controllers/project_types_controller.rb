@@ -1,6 +1,6 @@
 class ProjectTypesController < ApplicationController
   def index
-    @project_types = ProjectType.all
+    @project_types = ProjectType.page(params[:page]).per(10)
 
     render("project_type_templates/index.html.erb")
   end

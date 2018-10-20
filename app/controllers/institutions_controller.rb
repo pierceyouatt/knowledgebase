@@ -1,6 +1,6 @@
 class InstitutionsController < ApplicationController
   def index
-    @institutions = Institution.all
+    @institutions = Institution.page(params[:page]).per(10)
 
     render("institution_templates/index.html.erb")
   end

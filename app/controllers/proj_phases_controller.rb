@@ -1,6 +1,6 @@
 class ProjPhasesController < ApplicationController
   def index
-    @proj_phases = ProjPhase.all
+    @proj_phases = ProjPhase.page(params[:page]).per(10)
 
     render("proj_phase_templates/index.html.erb")
   end
