@@ -111,7 +111,7 @@
     </label>
 
     <!-- Input for type_id start -->
-    <input type="text" id="type_id" name="type_id" class="form-control" value="<%= @engagement.type_id %>">
+    <%= select_tag(:type_id, options_from_collection_for_select(ProjectType.all, :id, :type_name, @engagement.type_id), :class => "form-control") %>
     <!-- Input for type_id end -->
   </div>
   <!-- Label and input for type_id end -->
