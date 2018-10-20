@@ -1,6 +1,9 @@
 class Employee < ApplicationRecord
   # Direct associations
 
+  has_many   :engagements,
+             :foreign_key => "empl_id"
+
   # Indirect associations
 
   # Validations
